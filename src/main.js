@@ -7,11 +7,13 @@ import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css';
 import axios from 'axios'
+
 import http from 'http'
 import lodash from 'lodash'
 import './styles/styles.scss'
 
 Vue.prototype.$axios = axios;
+
 Vue.use(ElementUI);
 Vue.prototype.$http = http;
 Vue.prototype._ = lodash;

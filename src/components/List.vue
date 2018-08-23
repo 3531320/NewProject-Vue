@@ -62,6 +62,7 @@
            </div>
             <div role="tabpanel" class="tab-pane" id="createUser">
                <div class="col-md-12">
+                 <button @click="getArticles">test proxyTable</button>
 
                </div>
             </div>
@@ -74,6 +75,7 @@
 <script>
 import $ from "jquery";
 import axios from 'axios'
+console.log("ASda")
 export default {
   name: "UserList",
   data() {
@@ -106,6 +108,11 @@ export default {
             .catch(function (error) {
                console.log(error);
              });
+    },
+    getArticles() {
+      axios.get('/su/articles').then(res => {
+        console.log('res.data')
+      })
     }
   }
 };

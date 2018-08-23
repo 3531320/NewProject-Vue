@@ -10,17 +10,34 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+        '/a':{
+          target:'http://10.0.0.110:3000',
+          changeOrigin:true,
+          pathRewrite:{
+            '^/a':''
+          }
+        },
+        '/su': {// 将所有api/ 请求发给后台
+          //这里的target填服务端的端口的接口地址
+          target: 'http://www.suxiao666.top:3000',
+          changeOrigin: true,
+          pathRewrite: {
+            '^/su': '/api'
+          }
+        }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
-    port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+    port: 4000, // can be overwritten by process.env.PORT, if port is in use, a free one will be
+    // determined
     autoOpenBrowser: false,
     errorOverlay: true,
     notifyOnErrors: true,
     poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
 
-    
+
     /**
      * Source Maps
      */

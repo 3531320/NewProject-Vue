@@ -9,7 +9,7 @@
 </div>
 </template>
 <script>
-  import axios from 'axios'
+import axios from 'axios'
   export  default {
     data(){
       return {
@@ -18,12 +18,12 @@
     },
     created(){
       var _this = this;
-      this.getList();
+     this.getList();
     },
     methods:{
       getList:function () {
         var _this = this;
-        axios.get('http://10.0.0.110:3000/api/news/list')
+       axios.get('/a/api/news/list')
              .then(function (response) {
              _this.data = response.data.news;
              })
