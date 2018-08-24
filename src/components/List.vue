@@ -63,7 +63,12 @@
             <div role="tabpanel" class="tab-pane" id="createUser">
                <div class="col-md-12">
                  <button @click="getArticles">test proxyTable</button>
-
+                 <br>
+                 <ul v-for="item in datas.list" :key="item.name">
+                   <li>
+                     {{item.name}}
+                   </li>
+                 </ul>
                </div>
             </div>
             </div>
@@ -80,7 +85,8 @@ export default {
   name: "UserList",
   data() {
     return {
-      users: []
+      users: [],
+      datas:''
     };
   },
   created() {
@@ -110,8 +116,10 @@ export default {
              });
     },
     getArticles() {
-      axios.get('/su/articles').then(res => {
-        console.log('res.data')
+      var _this = this;
+      axios.get('/getList').then(res => {
+        console.log(":Sda");
+        _this.datas = res.data;
       })
     }
   }
