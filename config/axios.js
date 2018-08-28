@@ -2,7 +2,7 @@ import axios from 'axios';
 import Vue from '../src/main';
 
 // 全局设置baseURL
-axios.defaults.baseURL = 'http://localhost:3000';
+axios.defaults.baseURL = 'http://localhost:3001';
 
 /*axios.interceptors.request.use((config) => {
  // Vue.$loading.show();

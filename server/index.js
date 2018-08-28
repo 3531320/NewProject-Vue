@@ -14,6 +14,7 @@ require('./router')(express,app,config,apiRouter);
  res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
  next();
  });*/
-app.listen(3000,function(){
-  console.log('app listening on port 3000')
+
+app.listen(3001,function(){
+  console.log('app listening on port 3001')
 });
