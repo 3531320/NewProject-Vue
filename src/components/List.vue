@@ -28,7 +28,7 @@
                       <li class="active"><a href="#newest" data-toggle="tab">现用的</a></li>
                       <li><a href="#search" data-toggle="tab">搜索</a></li>
                   </ul>
-                  <div class="tab-content">
+                  <div class="tab-content" style="margin-top: 30px">
                       <div class="tab-pane active" id="newest">
                         <table class="table table-hover">
                           <thead>
@@ -62,13 +62,9 @@
            </div>
             <div role="tabpanel" class="tab-pane" id="createUser">
                <div class="col-md-12">
-                 <button @click="getArticles">test proxyTable</button>
-                 <br>
-                 <ul v-for="item in datas.list" :key="item.name">
-                   <li>
-                     {{item.name}}
-                   </li>
-                 </ul>
+                 <!--<button @click="getArticles">test proxyTable</button>
+                 <br>-->
+
                </div>
             </div>
             </div>
@@ -107,9 +103,9 @@ export default {
   methods:{
     getList:function(){
        var _this = this;
-       axios.get('http://avatarz-d-1286429508.cn-north-1.elb.amazonaws.com.cn/api/users')
+       axios.get('/api/user/list')
             .then(function (response) {
-               _this.users = response.data.users;
+               _this.users = response.data;
              })
             .catch(function (error) {
                console.log(error);
@@ -117,10 +113,10 @@ export default {
     },
     getArticles() {
       var _this = this;
-      axios.get('/getList').then(res => {
+      /*axios.get('/getList').then(res => {
         console.log(":Sda");
         _this.datas = res.data;
-      })
+      })*/
     }
   }
 };

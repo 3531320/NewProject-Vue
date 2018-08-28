@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-      <div>
+     <!-- <div>
         <el-breadcrumb separator-class="el-icon-arrow-right">
           <el-breadcrumb-item :to="{path:'/'}">首页</el-breadcrumb-item>
           <el-breadcrumb-item :to="{path:'he'}">布局</el-breadcrumb-item>
@@ -15,7 +15,7 @@
           <el-breadcrumb-item :to="{path:'text1'}">练习1-调查文件HTML5小应用</el-breadcrumb-item>
           <el-breadcrumb-item :to="{path:'new'}">新闻列表</el-breadcrumb-item>
         </el-breadcrumb>
-      </div>
+      </div>-->
 
     <router-view/>
   </div>
