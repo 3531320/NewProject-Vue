@@ -88,7 +88,6 @@
    </section>
 </template>
 <script>
-import axios from 'axios'
 export default {
   data() {
     return {
@@ -110,7 +109,7 @@ export default {
         console.log(error);
       }
     }); */
-     axios.get('/api/user/list/' +id)
+     this.axios.get('/api/user/list/' +id)
              .then(function (response) {
                _this.model = response.data;
              })

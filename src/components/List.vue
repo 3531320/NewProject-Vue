@@ -75,7 +75,6 @@
 
 <script>
 import $ from "jquery";
-import axios from 'axios'
 console.log("ASda")
 export default {
   name: "UserList",
@@ -103,7 +102,7 @@ export default {
   methods:{
     getList:function(){
        var _this = this;
-       axios.get('/api/user/list')
+       this.axios.get('/api/user/list')
             .then(function (response) {
                _this.users = response.data;
              })
